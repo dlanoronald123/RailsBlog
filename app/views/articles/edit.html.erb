@@ -1,0 +1,33 @@
+
+           
+        <div>
+            <% if @article.errors.any? %>
+                <ul>
+                    <% @article.errors.full_messages.each do |message| %>
+                        <li>
+                            <%= message %>
+                        </li>
+                    <% end %> 
+                </ul>
+            <% end %> 
+        </div>
+<%= form_with(model: @article, url: update_article_path, local: true) do |f|%>      
+    <p>
+         <div>
+            <%= f.label :name %>
+            <%= f.text_field :name%>
+        </div>
+        <div>
+            <%= f.label :age %>
+            <%= f.text_field :age%>
+        </div>
+        <div>
+            <%= f.label :body %>
+            <%= f.text_field :body%>
+        </div>
+        
+        <div>
+            <%= f.submit 'Update' %>
+        </div>
+    </p>   
+<% end %>

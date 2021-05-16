@@ -1,0 +1,26 @@
+
+<h1>Agent List</h1>
+<p>
+    <%= link_to 'Add new Agent', new_article_path %>
+    <table>
+        <thead>
+            <tr>    
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>BIOGRAPHY</th>
+          </tr>
+        </thead>
+    <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+                <td><%= article.name %></td>
+                <td><%= article.age %></td>
+                <td><%= article.body %></td>
+                <td><%= link_to 'Show',show_article_path(article) %></td>
+                <td><%= link_to 'Edit',edit_article_path(article) %></td>
+                <td><%= link_to 'Delete',delete_article_path(article), method: :delete, data: {confirm: "Are you sure?" } %></td>
+            </tr>   
+        <% end %>
+    </tbody>
+    </table>
+</p>
