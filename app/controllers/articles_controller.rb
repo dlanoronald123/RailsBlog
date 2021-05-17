@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     def create
         @article = ArticleSample.new(article_params)
         if @article.save
-           redirect_to articles_path
+           redirect_to articles_path(@article)
         else
             render :new
         end
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
     def update
         @article = ArticleSample.find(params[:id])
         if @article.update(article_params)
-            redirect_to articles_path
+            redirect_to articles_path(@article)
         else
             render :edit
         end  
@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
     def destroy
         @article = ArticleSample.find(params[:id])
         @article.destroy
-        redirect_to articles_path
+        redirect_to articles_path(@article)
     end
     
     private

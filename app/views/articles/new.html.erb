@@ -1,4 +1,6 @@
+<h1>AGENT</h1>
 
+<section class="new">
         <div>
             <% if @article.errors.any? %>
                 <ul>
@@ -10,22 +12,24 @@
                 </ul>
             <% end %> 
         </div>
-<%= form_with scope: :article, url: create_article_path, local:true do |f| %>
-    <p>
-        <div>
-            <%= f.label :name %>
-            <%= f.text_field :name%>
-        </div>
-        <div>
-            <%= f.label :age %>
-            <%= f.text_field :age%>
-        </div>
-        <div>
-            <%= f.label :body %>
-            <%= f.text_field :body%>
-        </div>
-        <div>
-            <%= f.submit %>
-        </div>
-    </p>   
-<% end %>
+    
+    <%= form_with scope: :article, url: create_article_path, local:true do |f| %>
+        <p>
+            <div class="label">
+                <%= f.label :name, class:'font' %>
+                <%= f.text_field :name, class:'field'%>
+            </div>
+            <div class="label">
+                <%= f.label :age, class:'font' %>
+                <%= f.text_field :age, class:'field'%>
+            </div>
+            <div class="label">
+                <%= f.label :body, class:'font' %>
+                <%= f.text_area :body, size: "30x8", class:'field' %>
+            </div>
+            <div class = "actions">
+                <%= f.submit 'Create', class: 'button'  %>
+            </div>
+        </p>
+    <% end %>
+</section>

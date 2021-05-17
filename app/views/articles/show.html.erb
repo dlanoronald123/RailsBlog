@@ -1,6 +1,8 @@
 <h1>Agent Details</h1>
-<p>Name:  <%= @article.name%></p>
-<p>Name:  <%= @article.age%></p>
-<p>Description: <%= @article.body%> </p>
-
-<%= link_to 'Add new Agent', new_article_path %>
+<section class="show">  
+<p><strong>Name:</strong>  <%= @article.name%></p>
+<p><strong>Age:</strong>  <%= @article.age%></p>
+<p><strong>Biography:</strong> <%= @article.body%> </p>
+</section>
+<button class ="showButton"><%= link_to 'Add new Agent', new_article_path %></button>
+<button class ="backButton"><%= link_to 'Back', articles_path %></button>
