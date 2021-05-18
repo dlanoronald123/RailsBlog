@@ -155,7 +155,7 @@
   .showButton{
     font-family: 'Bebas Neue', cursive;
     margin: auto;
-    width: 110px;
+    width: 60px;
     color: rgb(224, 222, 222);
     background: rgb(190, 31, 31);
     height: 35px;
@@ -169,7 +169,7 @@
 
   .showButton:hover{
     margin: auto;
-    width: 110px;
+    width: 60px;
     color: rgb(224, 222, 222);
     background: transparent;
     border: 2px solid red;
